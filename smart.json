@@ -1,6 +1,7 @@
 {
   "packages": {
     "bootstrap-slate": {},
-    "iron-router": {}
+    "iron-router": {},
+    "spin": {}
   }
 }

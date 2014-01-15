@@ -1,16 +1,18 @@
 <template name="postsList">
-	<div class="row"> <!-- class posts -->
+	<!-- class posts -->
 		{{#each posts}}
 			{{> postItem}}
 		{{/each}}
-	</div>
 </template>
 
 <template name="postItem"> 
+	<div class="row">
 		<div class="panel panel-default"> <!-- class post -->
 			<div class="panel-body"> <!-- class post-content -->
-				<h3><a href="{{url}}" target="_BLANK">{{title}}</a> <small>{{domain}}</small></h3>
+				<h3><a href="{{url}}" target="_BLANK">{{title}}</a> <small>{{domain}}</small>
+				<a href="{{pathFor 'postPage'}}" class="btn btn-primary pull-right">Comentar</a></h3>
 			</div>
+		</div>
 	</div>
 </template>
 

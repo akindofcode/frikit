@@ -1,0 +1,141 @@
+<template name="layout">
+	<div class="container"> <!-- Inicio container principal -->
+		<div class="row">
+			<nav class="navbar navbar-default" role="navigation"> <!-- Inicio del navegador -->
+			  <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </button>
+			    <a class="navbar-brand" href="{{pathFor 'postsList'}}">Frik it!</a>
+			  </div>
+			  <!-- Collect the nav links, forms, and other content for toggling -->
+			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    <ul class="nav navbar-nav">
+			      <li class="active"><a href="#">Recientes</a></li>
+			      <li><a href="#">Populares</a></li>
+			      <li class="dropdown">
+			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="#">Comics</a></li>
+			          <li><a href="#">Videojuegos</a></li>
+			          <li><a href="#">Libros</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#">Cine</a></li>
+			          <li><a href="#">Televisión</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#">Música</a></li>
+			          <li><a href="#">Arte</a></li>
+			        </ul>
+			      </li>
+			      <li><a href="#">Notificaciones</a></li>
+			    </ul>
+			    <ul class="nav navbar-nav navbar-right">
+			      <li><a href="#">Login</a></li>
+			      <li class="dropdown">
+			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acerca de <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="#">Action</a></li>
+			          <li><a href="#">Another action</a></li>
+			          <li><a href="#">Something else here</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#">Separated link</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </div><!-- /.navbar-collapse -->
+			</nav> <!-- fin del navegador -->
+		</div>
+
+			<div class="row"> <!-- Presentación de la página, solo aparece si no hay un usuario logueado -->
+				<div class="jumbotron">
+					<h1>Frik it!</h1>
+					<p>Bienvenido a Frik it, la nueva red social para <abbr title="Según la RAE: Persona que practica desmesurada y obsesivamente una afición">frikis</abbr> y no tan frikis. Frik it es la mejor manera de estar informado en tiempo real de lo que realmente importa. Comparte enlaces, videos, imagenes e ideas. Comenta y vota tus <em>frikits</em> favoritos.</p>
+					<a href="#" class="btn btn-lg btn-primary">Comenzar</a>
+				</div>
+			</div> <!-- fin de presentación de la página -->
+
+			<div class="row"> <!-- Comentarios de usuarios (ficticios) -->
+				<div class="col-md-3 ">
+					<blockquote class="pull-right">
+					<p>Frik it ha cambiado mi vida por completo.</p>
+					<small>frikius maximus</small>
+					</blockquote>
+				</div>
+				<div class="col-md-3 col-md-offset-1 ">
+					<blockquote class="pull-right">
+					<p>Desde que descubrí Frik it no he vuelto a entrar en Twitter!</p>
+					<small>F. riki</small>
+					</blockquote>
+				</div>
+				<div class="col-md-3 col-md-offset-1 ">
+					<blockquote class="pull-right">
+					<p>Lo malo de Frik it es que sabes cuando entras pero no cuando vas a salir...</p>
+					<small>Philip K. Frik</small>
+					</blockquote>
+				</div>
+			</div> <!-- fin comentarios de usuarios -->
+
+		<!-- Comienzo del template para mostrar los datos -->
+
+		{{yield}}
+
+
+		<!--
+
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h3><a href="http://www.google.es" target="_BLANK">Un buscador muy bueno</a> <small>www.google.es</small></h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h3><a href="http://yauh.de/articles/376/best-learning-resources-for-meteorjs" target="_BLANK">Learning resources for meteor</a> <small>yauh.de</small></h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title"><a href="http://www.anaitgames.com/videos/dark-souls-ii-tiene-un-nuevo-trailer" target="_BLANK">Nuevo trailer de Dark Souls 2</a></h3>
+			  </div>
+			  <div class="panel-body">
+			    <p>www.anaitgames.com</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title"><a href="http://www.youtube.com/watch?v=D7DvEIfrP84" target="_BLANK">Tabletop plays Lords of Waterdeep</a></h3>
+			  </div>
+			  <div class="panel-body">
+			    <p>youtube.com</p>
+			  </div>
+			</div>
+		</div> -->
+
+		<!-- Fin del template para mostrar los datos -->
+
+		<footer class="row"> <!-- Inicio Footer -->
+			<ul class="list-unstyled list-inline">
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Donate</a></li>
+				<li class="pull-right"><a href="{{pathFor 'postsList'}}">Inicio</a></li>
+			</ul>
+			<p>Creado por Chema Pérez. Contacta con él en <a href="mailto:akindofcode@gmail.com">akindofcode@gmail.com</a><br>
+			<!-- Código bajo licencia <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br> -->
+			Desarrollado con <a href="http://www.meteor.com" target="_BLANK">Meteor</a>. Front-end de <a href="http://getbootstrap.com" target="_BLANK">Bootstrap</a>. Web fonts de <a href="http://www.google.com/webfonts" target="_BLANK">Google Fonts</a>.</p>
+		</footer> <!-- Fin footer -->
+
+	</div> <!-- Fin container principal -->
+</template>
