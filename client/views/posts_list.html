@@ -1,0 +1,16 @@
+<template name="postsList">
+	<div class="row"> <!-- class posts -->
+		{{#each posts}}
+			{{> postItem}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="postItem"> 
+		<div class="panel panel-default"> <!-- class post -->
+			<div class="panel-body"> <!-- class post-content -->
+				<h3><a href="{{url}}" target="_BLANK">{{title}}</a> <small>{{domain}}</small></h3>
+			</div>
+	</div>
+</template>
+
