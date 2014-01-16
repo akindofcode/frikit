@@ -2,6 +2,8 @@
   "packages": {
     "bootstrap-slate": {},
     "iron-router": {},
-    "spin": {}
+    "spin": {},
+    "accounts-ui-bootstrap-dropdown": {},
+    "accounts-ui-bootstrap-3": {}
   }
 }
