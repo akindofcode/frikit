@@ -1,1 +1,4 @@
 /* CSS declarations go here */
+textarea.form-control {
+	resize:none;
+}

@@ -8,6 +8,12 @@ Posts.allow({						 // se puede quitar si solo ponemos el boton de nuevo cuando 
 
 Meteor.methods({
 	post: function(postAttributes) {
+
+		// chequeamos que la url lleva http:// delante y si no lo añadimos
+
+		if (postAttributes.url.toLowerCase().substr(0,7)!='http://') 
+		    postAttributes.url = 'http://'+postAttributes.url;
+
 		var user = Meteor.user(),
 			postWithSameLink = Posts.findOne({url: postAttributes.url});
 
