@@ -1,5 +1,28 @@
 <template name="postSubmit">  <!-- Form provisional, hay que retocarlo y añadir mas campos -->
-	<form class="main">
+	<form role="form" class="well form">
+	<legend><h1>Crea un nuevo frik-it!</h1></legend>
+		<div class="form-group">
+			<label for="url">URL</label>
+			<input name="url" class="form-control" type="text" value="" placeholder="Tu URL"/>
+			<p class="help-block">Introduce la url que quieres compartir.</p>
+		</div>
+		<div class="form-group">
+			<label for="title">Titulo</label>
+			<input name="title" class="form-control" type="text" value="" placeholder="Ponle un título"/>
+			<p class="help-block">Introduce un título.</p>
+			</div>
+		<div class="form-group">
+			<label for="message">Descripción</label>
+			<textarea name="message" class="form-control" rows="5" type="text" value=""/>
+			<p class="help-block">Introduce un comentario sobre el frik-it (opcional).</p>
+		</div>
+		<button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+</template>
+
+
+<!--
+ 	<form class="main">
 		<div class="control-group">
 		<label class="control-label" for="url">URL</label>
 		<div class="controls">
@@ -24,4 +47,4 @@
 		</div>
 	</div>
 	</form>
-</template>
+-->
