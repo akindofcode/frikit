@@ -30,7 +30,10 @@
 	          <li><a href="#">Arte</a></li>
 	        </ul>
 	      </li>
+	      <li><a href="{{pathFor 'postSubmit'}}">Nuevo</a></li>
+	      {{#if currentUser}}
 	      <li><a href="#">Notificaciones</a></li>
+	      {{/if}}
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
 	      <li><a href="#">{{loginButtons}}</a></li>
