@@ -1,10 +1,24 @@
 Posts = new Meteor.Collection('posts'); // Usaremos la base de datos posts para almacenar todos los posts
 
-Posts.allow({						 // se puede quitar si solo ponemos el boton de nuevo cuando haya un user
-	insert: function(userId, doc) {  // solo se puede añadir posts si estamos logueados
-		return !! userId;
+//Posts.allow({						 // se puede quitar si solo ponemos el boton de nuevo cuando haya un user
+
+//		return !! userId;
+//	}
+//})
+
+Posts.allow ({
+//	insert: function(userId, doc) {  // no hace falta ya que quitamos el boton de nuevo si no estas logueado
+	update: ownsDocument,  	// ver lib/permisos.js
+	remove: ownsDocument	// ver lib/permisos.js
+});
+
+Posts.deny ({
+	update: function(userId, post, fieldNames) {
+		// solo se pueden editar dos campos:
+		return (_.without(fieldNames, 'url', 'title').length > 0 );
 	}
 })
+
 
 Meteor.methods({
 	post: function(postAttributes) {

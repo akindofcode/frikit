@@ -1,0 +1,24 @@
+<template name="postEdit"> 
+	{{#with post}}
+	<form role="form" class="well form">
+	<legend><h1>Edita tu frik-it!</h1></legend>
+		<div class="form-group">
+			<label for="url">URL</label>
+			<input name="url" class="form-control" type="text" value="{{url}}" placeholder="Tu URL"/>
+			<p class="help-block">Introduce la url que quieres compartir.</p>
+		</div>
+		<div class="form-group">
+			<label for="title">Título</label>
+			<input name="title" class="form-control" type="text" value="{{title}}" placeholder="Ponle un título"/>
+			<p class="help-block">Introduce un título.</p>
+			</div>
+<!--	<div class="form-group">
+			<label for="message">Descripción</label>
+			<textarea name="message" class="form-control" rows="5" type="text" value="{{message}}"/>
+			<p class="help-block">Introduce un comentario sobre el frik-it (opcional).</p>
+		</div> -->
+		<button type="submit" class="btn btn-primary">Actalizar</button>
+		<button class="btn btn-danger delete">Borra el frik-it</a>
+	</form>
+	{{/with}}
+</template>
