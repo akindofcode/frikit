@@ -1,12 +1,12 @@
 <template name="postPage">
 
-		{{> postItem}}
+		{{> postItem2}}
 	
-		<ul class="comments">
+		<div class="comments well row">
 			{{#each comments}}
 				{{> comment}}
 			{{/each}}
-		</ul>
+		</div>
 
 		{{#if currentUser}}
 			{{> commentSubmit}}

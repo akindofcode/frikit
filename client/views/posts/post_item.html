@@ -14,3 +14,19 @@
 		</div>
 	</div>
 </template>
+
+<template name="postItem2">  <!-- manera temporal de quitar el boton de comentar cuando ya estamos en comentarios -->
+	<div class="row">
+		<div class="panel panel-default"> <!-- class post -->
+			<div class="panel-body"> <!-- class post-content -->
+				<h3><a href="{{url}}" target="_BLANK">{{title}}</a> <small>{{domain}}</small></h3>
+				<small>Creado por <strong>{{author}}</strong> el {{submittedText}}, 
+				<a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a></small>
+				{{#if ownPost}}
+				<a href="{{pathFor 'postEdit'}}"><span class="badge">Editar</span></a>
+				{{/if}}
+				<!-- hay que añadir ver posts de este usuario, parthFor {{userId}} -->
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,9 +1,7 @@
 <template name="comment">
-	<li>
-		<h4>
-			<span class="author">{{author}}</span>
-			<span class="date">on {{submittedText}}</span>
-		</h4>
+	<li class="well">
 		<p>{{body}}</p>
+		<span class="small">Por {{author}}, </span>
+		<span class="small">el {{submittedText}}</span>
 	</li>
 </template>
