@@ -13,4 +13,8 @@ Meteor.publish('posts', function() {
 //  	return Posts.find({'author':'Tom'}, {fields: {date:false}});
 // });
 
+Meteor.publish('comments', function (postId) {
+	return Comments.find({postId: postId});
+});
+
 Houston.add_collection(Meteor.users);
