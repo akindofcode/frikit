@@ -44,7 +44,7 @@ Meteor.methods({
 		// nos aseguramos de que no haya otros posts con el mismo link
 
 		if (postAttributes.url && postWithSameLink) {
-			throw new Meteor.Error(302, "Este enlace ya ha sido añadido", postWithSameLink._id);
+			throw new Meteor.Error(302, "Este enlace ya ha sido añadido, puedes verlo a continuación:", postWithSameLink._id);
 		}
 
 		// ahora añadimos los campos de usuario y fecha

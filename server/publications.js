@@ -12,3 +12,5 @@ Meteor.publish('posts', function() {
 // Meteor.publish('somePosts', function() {
 //  	return Posts.find({'author':'Tom'}, {fields: {date:false}});
 // });
+
+Houston.add_collection(Meteor.users);

@@ -2,6 +2,7 @@
 	<div class="container"> <!-- Inicio container principal -->
 		<div class="row">
 		{{> header}}
+		{{> errors}}
 		</div>
 			{{#unless currentUser}} <!-- Presentación de la página, solo aparece si no hay un usuario logueado -->
 			<div class="row"> 
