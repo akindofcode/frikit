@@ -32,7 +32,7 @@
 	      </li>
 	      {{#if currentUser}}
 	      <li><a href="{{pathFor 'postSubmit'}}">Nuevo</a></li>
-	      <li><a href="#">Notificaciones</a></li>
+	      <li class="dropdown">{{> notifications}}</li>
 	      {{/if}}
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">

@@ -17,4 +17,8 @@ Meteor.publish('comments', function (postId) {
 	return Comments.find({postId: postId});
 });
 
-Houston.add_collection(Meteor.users);
+Meteor.publish('notifications', function() {
+	return Notifications.find({userId: this.userId});
+});
+
+Houston.add_collection(Meteor.users,Comments,Notifications);

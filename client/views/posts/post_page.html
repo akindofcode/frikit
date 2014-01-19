@@ -1,8 +1,16 @@
 <template name="postPage">
 
-		{{> postItem2}}
+		{{> postItem2}} <!-- para no mostrar el boton de comentar -->
 	
-		<div class="comments well row">
+		{{#if currentUser}}
+		{{else}}
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<p>Por favor, registrate o accede con tu cuenta para dejar un comentario.</p>
+			</div>
+		{{/if}}
+
+		<div class="comments row">
 			{{#each comments}}
 				{{> comment}}
 			{{/each}}
@@ -10,7 +18,5 @@
 
 		{{#if currentUser}}
 			{{> commentSubmit}}
-		{{else}}
-			<p>Por favor, accede con tu cuenta para dejar un comentario.</p>
 		{{/if}}
 </template>
