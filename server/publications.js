@@ -1,7 +1,12 @@
 // Vamos a publicar los datos que queremos que lleguen al cliente, este ha de subscribirse en /client/main.js
 
-Meteor.publish('posts', function() {
-	return Posts.find();
+Meteor.publish('posts', function(options) {
+	return Posts.find({}, options);
+});
+
+//Tambien funcionaba antes de hacer esto:
+Meteor.publish('singlePost', function(id) {
+	return id && Posts.find(id);
 });
 
 // Por ejemplo si queremos publicar solo parte de una colección, podríamos hacer:

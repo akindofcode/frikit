@@ -3,6 +3,10 @@
 		{{#each posts}}
 			{{> postItem}}
 		{{/each}}
+
+	{{#unless hasMorePosts}}
+		<a class="btn btn-primary btn-lg btn-block" href="{{nextPath}}">Cargar más frik-its</a>
+	{{/unless}}
 </template>
 
 

@@ -1,5 +1,5 @@
 Template.postsList.helpers({
-	posts: function() {
-		return Posts.find({}, {sort: {submitted: -1}});
-	}
+	hasMorePosts : function() {
+		return Router.current().postsLimit() > Router.current().postCount();
+  } // quizas se podria mirar en el router para que el path nunca fuera mayor que el total de posts
 });

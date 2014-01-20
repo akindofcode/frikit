@@ -2,3 +2,8 @@
 textarea.form-control {
 	resize:none;
 }
+
+#iron-router-progress {
+	background-color : #aaa;
+	box-shadow       : 0 0 5px #aaa>;
+}
