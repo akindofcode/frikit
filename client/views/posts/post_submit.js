@@ -5,7 +5,8 @@ Template.postSubmit.events ({
 		var post = {	// Hay que añadir más campos: date, creado por, categoria, etc.
 			url: $(e.target).find('[name=url]').val(),
 			title: $(e.target).find('[name=title]').val(),
-			message: $(e.target).find('[name=message]').val()
+			//message: $(e.target).find('[name=message]').val()
+			categoria: $(e.target).find('[name=categoria]').val()
 		}
 
 		Meteor.call('post', post, function(error,id) {

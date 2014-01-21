@@ -9,7 +9,7 @@ Posts.allow ({
 Posts.deny ({
 	update: function(userId, post, fieldNames) {
 		// solo se pueden editar dos campos:
-		return (_.without(fieldNames, 'url', 'title').length > 0 );
+		return (_.without(fieldNames, 'url', 'title', 'categoria').length > 0 );
 	}
 })
 
