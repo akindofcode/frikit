@@ -1,7 +1,6 @@
 <template name="layout">
-	<div class="container"> <!-- Inicio container principal -->
+	<div class="container">
 		<div class="row">
-		{{> header}}
 		{{> errors}}
 		</div>
 			{{#unless currentUser}} <!-- Presentación de la página, solo aparece si no hay un usuario logueado -->
@@ -40,7 +39,7 @@
 		<!-- Fin del template para mostrar los datos -->
 
 		<footer class="row"> <!-- Inicio Footer -->
-			<br>
+			<br/>
 			<ul class="list-unstyled list-inline">
 				<li><a href="#">Twitter</a></li>
 				<li><a href="#">Donate</a></li>
@@ -50,6 +49,5 @@
 			<!-- Código bajo licencia <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br> -->
 			Desarrollado con <a href="http://www.meteor.com" target="_BLANK">Meteor</a>. Front-end de <a href="http://getbootstrap.com" target="_BLANK">Bootstrap</a>. Web fonts de <a href="http://www.google.com/webfonts" target="_BLANK">Google Fonts</a>.</p>
 		</footer> <!-- Fin footer -->
-
-	</div> <!-- Fin container principal -->
+	</div>
 </template>

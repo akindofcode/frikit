@@ -9,10 +9,15 @@ Template.postItem.helpers({
 	},
 	submittedText: function() {
 	return new Date(this.submitted).toLocaleString();
-	}
-//	commentsCount: function() {			No se necesita ya porque metimos commentsCount en cad post
-//		return Comments.find({postId: this._id}).count();
-//	}
+	},
+	upvotedClass: function() {
+		var userId = Meteor.userId();
+		if (userId && !_.include(this.upvoters, userId)) {
+			return 'btn-success';
+		} else {
+			return 'btn-danger';
+		}
+	}	
 });
 
 Template.postItem2.helpers({   //manera temporal de quitar el boton de comentar cuando ya estamos en comentarios
@@ -26,5 +31,28 @@ Template.postItem2.helpers({   //manera temporal de quitar el boton de comentar 
 	},
 	submittedText: function() {
 	return new Date(this.submitted).toLocaleString();
+	},	
+	upvotedClass: function() {
+		var userId = Meteor.userId();
+		if (userId && !_.include(this.upvoters, userId)) {
+			return 'btn-success';
+		} else {
+			return 'btn-danger';
+		}
+	}	
+});
+
+Template.postItem.events({
+	'click .upvote': function(e) {
+		e.preventDefault();
+		Meteor.call('upvote', this._id);
+	}
+});
+
+
+Template.postItem2.events({
+	'click .upvote': function(e) {
+		e.preventDefault();
+		Meteor.call('upvote', this._id);
 	}
 });

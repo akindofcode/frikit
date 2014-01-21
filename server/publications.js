@@ -5,9 +5,9 @@ Meteor.publish('posts', function(options) {
 });
 
 //Tambien funcionaba antes de hacer esto:
-Meteor.publish('singlePost', function(id) {
-	return id && Posts.find(id);
-});
+//Meteor.publish('singlePost', function(id) {
+//return id && Posts.find(id);
+//});
 
 // Por ejemplo si queremos publicar solo parte de una colección, podríamos hacer:
 // Meteor.publish('somePosts', function() {

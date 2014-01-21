@@ -1,11 +1,5 @@
 Posts = new Meteor.Collection('posts'); // Usaremos la base de datos posts para almacenar todos los posts
 
-//Posts.allow({						 // se puede quitar si solo ponemos el boton de nuevo cuando haya un user
-
-//		return !! userId;
-//	}
-//})
-
 Posts.allow ({
 //	insert: function(userId, doc) {  // no hace falta ya que quitamos el boton de nuevo si no estas logueado
 	update: ownsDocument,  	// ver lib/permisos.js
@@ -18,7 +12,6 @@ Posts.deny ({
 		return (_.without(fieldNames, 'url', 'title').length > 0 );
 	}
 })
-
 
 Meteor.methods({
 	post: function(postAttributes) {
@@ -53,11 +46,35 @@ Meteor.methods({
 			userId: user._id,
 			author: user.username,
 			submitted: new Date().getTime(),
-			commentsCount:0
+			commentsCount:0,
+			upvoters: [],
+			votes: 0
+			// hay que añadir categorias
 		});
 
 		var postId = Posts.insert(post);
 
 		return postId;
+	},
+
+	upvote: function(postId) {
+		
+		var user = Meteor.user();
+
+		// aseguremonos de que el usuario esta logueado
+		if (!user)
+			throw new Meteor.Error(401, "You need to login to upvote");
+		
+		var post = Posts.findOne(postId);
+		if (!post)
+			throw new Meteor.Error(422, 'Post not found');
+		
+		if (_.include(post.upvoters, user._id))
+			throw new Meteor.Error(422, 'Already upvoted this post');
+		
+		Posts.update(post._id, {
+		$addToSet: {upvoters: user._id},
+		$inc: {votes: 1}
+		});
 	}
 });

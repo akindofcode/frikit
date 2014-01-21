@@ -2,9 +2,10 @@
 	<div class="row">
 		<div class="panel panel-default"> <!-- class post -->
 			<div class="panel-body"> <!-- class post-content -->
-				<h3><a href="{{url}}" target="_BLANK">{{title}}</a> <small>{{domain}}</small>
+
+				<h3><button class="btn btn-small upvote {{upvotedClass}}">▲</button> <a href="{{url}}" target="_BLANK">{{title}}</a> <small>{{domain}}</small>
 				<a href="{{pathFor 'postPage'}}" class="btn btn-primary pull-right">Comentar</a></h3>
-				<small>Creado por <strong>{{author}}</strong> el {{submittedText}}, 
+				<small>{{votes}} votos, creado por <strong>{{author}}</strong> el {{submittedText}}, 
 				<a href="{{pathFor 'postPage'}}">{{commentsCount}} comentarios</a></small>
 				{{#if ownPost}}
 				<a href="{{pathFor 'postEdit'}}"><span class="badge">Editar</span></a>
@@ -19,8 +20,8 @@
 	<div class="row">
 		<div class="panel panel-default"> <!-- class post -->
 			<div class="panel-body"> <!-- class post-content -->
-				<h3><a href="{{url}}" target="_BLANK">{{title}}</a> <small>{{domain}}</small></h3>
-				<small>Creado por <strong>{{author}}</strong> el {{submittedText}}, 
+				<h3><button class="btn btn-small upvote {{upvotedClass}}">▲</button> <a href="{{url}}" target="_BLANK">{{title}}</a> <small>{{domain}}</small></h3>
+				<small>{{votes}} votos, creado por <strong>{{author}}</strong> el {{submittedText}}, 
 				<a href="{{pathFor 'postPage'}}">{{commentsCount}} comentarios</a></small>
 				{{#if ownPost}}
 				<a href="{{pathFor 'postEdit'}}"><span class="badge">Editar</span></a>
@@ -30,3 +31,8 @@
 		</div>
 	</div>
 </template>
+
+<!-- <a href="#" class="upvote fa fa-arrow-circle-up"></a>-->
+<!--<button class="btn btn-small btn-primary upvote"><i class="upvote fa fa-arrow-circle-up"></i></button> -->
+<!-- <a href="#"><i class="upvote fa fa-arrow-circle-up {{upvotedClass}}"></i></a>
+<a href="#"><i class="upvote fa fa-arrow-circle-up {{upvotedClass}}"></i></a> -->

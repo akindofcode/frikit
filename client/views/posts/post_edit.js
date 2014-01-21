@@ -29,7 +29,7 @@ Template.postEdit.events({
 	'click .delete': function(e) {
 		e.preventDefault();
 		
-		if (confirm("Delete this post?")) {
+		if (confirm("¿Está seguro de que quiere borrar este frik-it?")) {
 			var currentPostId = this._id; // Session.get('currentPostId');
 			Posts.remove(currentPostId);
 			Router.go('postsList');
