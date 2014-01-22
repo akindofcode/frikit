@@ -51,6 +51,10 @@ Template.header.events({
     },
     'click .Television': function() {
         Session.set("opcion","Televisión");
+    },
+    'click .Todos': function() {
+        Session.set("opcion","Todo");
     }
+
 
 })
