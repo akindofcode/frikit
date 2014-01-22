@@ -23,6 +23,14 @@ Template.header.helpers({
         });
 
         return active && 'active';
+    },
+    activeRecientes: function() {
+        if (Session.equals("orden","recientes")) return 'active';
+        else return '';
+    },
+    activePopulares: function() {
+        if (Session.equals("orden","populares")) return 'active';
+        else return '';
     }
 });
 
@@ -54,7 +62,14 @@ Template.header.events({
     },
     'click .Todos': function() {
         Session.set("opcion","Todo");
+    },
+    'click .home': function() {
+        Session.set("opcion","Todo");
+    },
+    'click .recientes': function() {
+        Session.set("orden","recientes");
+    },
+    'click .populares': function() {
+        Session.set("orden","populares");
     }
-
-
 })

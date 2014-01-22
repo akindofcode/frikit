@@ -4,5 +4,12 @@ Template.postsList.helpers({
 		return Router.current().postsLimit() > Session.get("postCount");
 
 //		return Router.current().postsLimit() > Router.current().postCount();
-  } // quizas se podria mirar en el router para que el path nunca fuera mayor que el total de posts
+  	}, // quizas se podria mirar en el router para que el path nunca fuera mayor que el total de posts
+  	numero: function() {
+  		return Session.get("postCount");
+  	},
+  	grupo: function() {
+  		return Session.get("opcion");
+  	}
+
 });
