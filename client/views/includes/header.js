@@ -25,3 +25,32 @@ Template.header.helpers({
         return active && 'active';
     }
 });
+
+
+Template.header.events({
+    'click .Cine': function() {
+        Session.set("opcion","Cine");
+    },
+    'click .Comics': function() {
+        Session.set("opcion","Comics");
+    },
+    'click .Informatica': function() {
+        Session.set("opcion","Informática");
+    },
+    'click .Libros': function() {
+        Session.set("opcion","Libros");
+    },
+    'click .Videojuegos': function() {
+        Session.set("opcion","Videojuegos");
+    },
+    'click .Musica': function() {
+        Session.set("opcion","Música");
+    },
+    'click .Otros': function() {
+        Session.set("opcion","Otros");
+    },
+    'click .Television': function() {
+        Session.set("opcion","Televisión");
+    }
+
+})

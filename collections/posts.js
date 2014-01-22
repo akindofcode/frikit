@@ -16,6 +16,10 @@ Posts.deny ({
 Meteor.methods({
 	post: function(postAttributes) {
 
+		
+		if (!postAttributes.url)
+			throw new Meteor.Error(402, "Por favor, introduce un enlace");
+
 		// chequeamos que la url lleva http:// delante y si no lo añadimos
 
 		if (postAttributes.url.toLowerCase().substr(0,7)!='http://') 
@@ -42,7 +46,7 @@ Meteor.methods({
 
 		// ahora añadimos los campos de usuario y fecha
 
-		var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
+		var post = _.extend(_.pick(postAttributes, 'url', 'title', 'categoria'), {
 			userId: user._id,
 			author: user.username,
 			submitted: new Date().getTime(),

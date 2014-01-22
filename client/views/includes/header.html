@@ -14,20 +14,20 @@
 		  <!-- Collect the nav links, forms, and other content for toggling -->
 		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    <ul class="nav navbar-nav">
-		      <li class=""><a href="{{pathFor 'newPosts'}}">Recientes</a></li>
-		      <li class=""><a href="{{pathFor 'bestPosts'}}">Populares</a></li>
+		      <li class="recientes"><a href="{{pathFor 'newPosts'}}">Recientes</a></li>
+		      <li class="populares"><a href="{{pathFor 'bestPosts'}}">Populares</a></li>
 		      <li class="dropdown">
 		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
-		          <li><a href="#">Comics</a></li>
-		          <li><a href="#">Videojuegos</a></li>
-		          <li><a href="#">Libros</a></li>
-		          <li class="divider"></li>
-		          <li><a href="#">Cine</a></li>
-		          <li><a href="#">Televisión</a></li>
-		          <li class="divider"></li>
-		          <li><a href="#">Música</a></li>
-		          <li><a href="#">Arte</a></li>
+		          <li><a href="{{pathFor 'Cine'}}" class="Cine">Cine</a></li>
+		          <li><a href="{{pathFor 'Comics'}}" class="Comics">Comics</a></li>
+		          <li><a href="{{pathFor 'Informatica'}}" class="Informatica">Informática</a></li>
+		          <li><a href="{{pathFor 'Libros'}}" class="Libros">Libros</a></li>
+		          <li><a href="{{pathFor 'Videojuegos'}}" class="Videojuegos">Videojuegos</a></li>
+		          <li><a href="{{pathFor 'Musica'}}" class="Musica">Música</a></li>
+		          <li><a href="{{pathFor 'Otros'}}" class="Otros">Otros</a></li>
+		          <li><a href="{{pathFor 'Television'}}" class="Television">Televisión</a></li>
+		          <li><a href="{{pathFor 'home'}}" class="Todos">Todos</a></li>
 		        </ul>
 		      </li>
 		      {{#if currentUser}}
